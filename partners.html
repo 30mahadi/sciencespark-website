@@ -2,89 +2,109 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>News — Science Spark</title>
+<title>Contact — Science Spark</title>
 <link rel="stylesheet" href="../css/style.css">
 <style>
-.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
-.news-card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--border);transition:all .3s}
-.news-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(13,42,78,.11)}
-.news-thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;background:linear-gradient(135deg,var(--navy),var(--blue-mid))}
-.news-cat{position:absolute;top:14px;left:14px;background:var(--sky);color:#fff;padding:3px 12px;border-radius:100px;font-size:11px;font-weight:700}
-.news-body{padding:24px}
-.news-date{font-size:11px;color:var(--grey);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
-.news-title{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy);margin-bottom:10px;line-height:1.35}
-.news-excerpt{font-size:13px;color:var(--grey);line-height:1.75}
-.news-read{display:inline-flex;align-items:center;gap:6px;color:var(--blue-mid);font-size:13px;font-weight:700;margin-top:14px;transition:gap .2s}
-.news-read:hover{gap:10px}
-.news-full{background:#fff;border-radius:14px;padding:40px;border:1px solid var(--border);margin-top:32px}
-.news-full h2{font-family:'Playfair Display',serif;font-size:28px;color:var(--navy);margin-bottom:16px;line-height:1.3}
-.news-full p{font-size:15px;color:var(--grey);line-height:1.85;margin-bottom:16px}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact-info-card{background:#fff;border-radius:14px;border:1px solid var(--border);padding:32px;margin-bottom:20px}
+.contact-item{display:flex;gap:16px;align-items:flex-start;margin-bottom:24px}
+.contact-item:last-child{margin-bottom:0}
+.contact-icon{width:46px;height:46px;border-radius:10px;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px}
+.contact-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--grey);margin-bottom:4px}
+.contact-val{font-size:14px;color:var(--navy);font-weight:500}
+.contact-val a{color:var(--blue-mid)}
+.social-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.social-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px;display:flex;align-items:center;gap:12px;text-decoration:none;transition:all .2s}
+.social-card:hover{border-color:var(--blue-mid);transform:translateY(-2px);box-shadow:0 6px 20px rgba(13,42,78,.1)}
+.social-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.fb-icon{background:#1877F2}
+.ig-icon{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}
+.wa-icon{background:#25D366}
+.social-card-name{font-size:13px;font-weight:700;color:var(--navy)}
+.social-card-handle{font-size:11px;color:var(--grey)}
+.form-card{background:#fff;border-radius:16px;border:1px solid var(--border);padding:36px;box-shadow:0 4px 24px rgba(13,42,78,.07)}
+.form-card h2{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--navy);letter-spacing:1px;margin-bottom:6px}
+.form-card p{font-size:14px;color:var(--grey);margin-bottom:24px;line-height:1.7}
+@media(max-width:900px){.contact-layout{grid-template-columns:1fr}.social-cards{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
 <div id="main-nav"></div>
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="breadcrumb"><a href="../index.html">Home</a> / News</div>
-    <h1>News & Updates</h1>
-    <p>The latest announcements, event recaps, and updates from Science Spark.</p>
+    <div class="breadcrumb"><a href="../index.html">Home</a> / Contact</div>
+    <h1>Contact Us</h1>
+    <p>Have a question, want to collaborate, or just want to say hello? We'd love to hear from you.</p>
   </div>
 </div>
 <div class="page-content">
-  <div class="news-grid">
-    <div class="news-card">
-      <div class="news-thumb">🎉<span class="news-cat">Announcement</span></div>
-      <div class="news-body">
-        <div class="news-date">2026</div>
-        <div class="news-title">SciVerse Carnival 1.0 Concludes with Massive Success</div>
-        <p class="news-excerpt">Our flagship event drew over 700 participants and 52 Campus Ambassadors, establishing Science Spark as a leading youth science organization in Bangladesh.</p>
-        <span class="news-read">Read More →</span>
+  <div class="contact-layout">
+    <div>
+      <div class="section-label">Reach Us</div>
+      <div class="section-title" style="margin-bottom:24px">Get in Touch</div>
+      <div class="contact-info-card">
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:sciencespark.official.bd@gmail.com">sciencespark.official.bd@gmail.com</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div><div class="contact-label">Phone</div><div class="contact-val"><a href="tel:+8801716455276">+880 1716-455276</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div><div class="contact-label">WhatsApp</div><div class="contact-val"><a href="https://wa.me/8801716455276" target="_blank">+880 1716-455276</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><div class="contact-label">Location</div><div class="contact-val">Bangladesh (Physical & Online Presence)</div></div>
+        </div>
+      </div>
+      <div class="section-label">Social Media</div>
+      <div class="section-title" style="font-size:24px;margin-bottom:16px">Follow Us</div>
+      <div class="social-cards">
+        <a href="https://www.facebook.com/share/1Eseyi6Dt4/" target="_blank" class="social-card">
+          <div class="social-icon fb-icon">📘</div>
+          <div><div class="social-card-name">Facebook</div><div class="social-card-handle">Science Spark</div></div>
+        </a>
+        <a href="https://www.instagram.com/science.spark.official" target="_blank" class="social-card">
+          <div class="social-icon ig-icon">📷</div>
+          <div><div class="social-card-name">Instagram</div><div class="social-card-handle">@science.spark.official</div></div>
+        </a>
+        <a href="https://wa.me/8801716455276" target="_blank" class="social-card">
+          <div class="social-icon wa-icon">💬</div>
+          <div><div class="social-card-name">WhatsApp</div><div class="social-card-handle">+880 1716-455276</div></div>
+        </a>
+        <a href="mailto:sciencespark.official.bd@gmail.com" class="social-card">
+          <div class="social-icon" style="background:var(--navy)">📧</div>
+          <div><div class="social-card-name">Email</div><div class="social-card-handle">Official Email</div></div>
+        </a>
       </div>
     </div>
-    <div class="news-card">
-      <div class="news-thumb">🇧🇩<span class="news-cat">Event Recap</span></div>
-      <div class="news-body">
-        <div class="news-date">2026</div>
-        <div class="news-title">1st National Freedom Fiesta — A Historic Success</div>
-        <p class="news-excerpt">500+ students gathered for science, creativity, and national pride. With 66 Campus Ambassadors across Bangladesh, the Freedom Fiesta was truly national in scope.</p>
-        <span class="news-read">Read More →</span>
+    <div class="form-card">
+      <h2>Send a Message</h2>
+      <p>Fill out the form and we'll get back to you as soon as possible — usually within 24 hours.</p>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">First Name *</label><input type="text" class="form-control" placeholder="Your first name"></div>
+        <div class="form-group"><label class="form-label">Last Name *</label><input type="text" class="form-control" placeholder="Your last name"></div>
       </div>
-    </div>
-    <div class="news-card">
-      <div class="news-thumb">🚀<span class="news-cat">Organization</span></div>
-      <div class="news-body">
-        <div class="news-date">2026</div>
-        <div class="news-title">Science Spark Expands to 16 Specialized Departments</div>
-        <p class="news-excerpt">From Photography and IT to Research & Development and Arts & Culture — Science Spark now operates across 16 dedicated departments with 29 team members.</p>
-        <span class="news-read">Read More →</span>
+      <div class="form-group"><label class="form-label">Email Address *</label><input type="email" class="form-control" placeholder="your@email.com"></div>
+      <div class="form-group"><label class="form-label">Phone Number</label><input type="tel" class="form-control" placeholder="+880 ..."></div>
+      <div class="form-group">
+        <label class="form-label">Subject *</label>
+        <select class="form-control">
+          <option value="">— Select a subject —</option>
+          <option>General Inquiry</option>
+          <option>Join Science Spark</option>
+          <option>Partnership / Collaboration</option>
+          <option>Competition Registration</option>
+          <option>Event Information</option>
+          <option>Media / Press</option>
+          <option>Other</option>
+        </select>
       </div>
-    </div>
-    <div class="news-card">
-      <div class="news-thumb">⚡<span class="news-cat">Coming Soon</span></div>
-      <div class="news-body">
-        <div class="news-date">2026</div>
-        <div class="news-title">SciVerse Carnival 2.0 — Bigger and Bolder</div>
-        <p class="news-excerpt">Following the incredible success of Carnival 1.0, Science Spark is proud to announce that SciVerse Carnival 2.0 is in the works. Stay tuned for details.</p>
-        <span class="news-read">Read More →</span>
-      </div>
-    </div>
-    <div class="news-card">
-      <div class="news-thumb">🤝<span class="news-cat">Partnerships</span></div>
-      <div class="news-body">
-        <div class="news-date">2026</div>
-        <div class="news-title">Science Spark Opens Partnership Applications</div>
-        <p class="news-excerpt">Clubs and organizations across Bangladesh can now apply to partner with Science Spark for competitions, events, and participant recruitment support.</p>
-        <span class="news-read">Read More →</span>
-      </div>
-    </div>
-    <div class="news-card">
-      <div class="news-thumb">🌟<span class="news-cat">Community</span></div>
-      <div class="news-body">
-        <div class="news-date">2026</div>
-        <div class="news-title">Science Spark Membership Applications Now Open</div>
-        <p class="news-excerpt">We are now accepting free membership applications for passionate students who want to be part of Bangladesh's most exciting youth science organization.</p>
-        <a href="join.html" class="news-read">Apply Now →</a>
-      </div>
+      <div class="form-group"><label class="form-label">Message *</label><textarea class="form-control" placeholder="Write your message here..."></textarea></div>
+      <button class="btn btn-primary btn-full" onclick="alert('Thank you! We will get back to you within 24 hours.')">Send Message →</button>
     </div>
   </div>
 </div>
