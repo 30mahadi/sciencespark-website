@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Science Spark</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-bottom: 64px; }
+.about-photo { border-radius: 16px; overflow: hidden; aspect-ratio: 4/3; background: linear-gradient(135deg, var(--navy), var(--blue-mid)); display: flex; align-items: center; justify-content: center; font-size: 80px; position: relative; }
+.about-photo-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(8,15,30,.8), transparent); padding: 24px 20px 16px; color: rgba(255,255,255,.7); font-size: 13px; }
+.pillar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+.pillar-card { background: var(--cream); border-radius: 12px; padding: 22px; border-left: 4px solid var(--blue-mid); }
+.pillar-icon { font-size: 28px; margin-bottom: 10px; }
+.pillar-title { font-weight: 700; font-size: 14px; color: var(--navy); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .4px; }
+.pillar-desc { font-size: 13px; color: var(--grey); line-height: 1.65; }
+.founder-card { background: linear-gradient(135deg, var(--navy), var(--blue)); border-radius: 16px; padding: 36px; color: #fff; display: flex; gap: 28px; align-items: center; margin-top: 48px; }
+.founder-avatar { width: 80px; height: 80px; border-radius: 50%; background: rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 30px; letter-spacing: 1px; flex-shrink: 0; border: 3px solid rgba(255,255,255,.25); }
+.founder-label { font-size: 11px; color: var(--sky); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+.founder-name { font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 1.5px; margin-bottom: 4px; }
+.founder-contact { font-size: 13px; color: rgba(255,255,255,.55); }
+.founder-contact a { color: var(--sky); }
+.stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 48px 0; }
+.stat-box { background: #fff; border-radius: 14px; padding: 28px 20px; text-align: center; border: 1px solid var(--border); }
+.stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--blue-mid); letter-spacing: 2px; line-height: 1; }
+.stat-lbl { font-size: 12px; color: var(--grey); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+.dept-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
+.dept-item { background: var(--cream); border-radius: 10px; padding: 16px 18px; display: flex; align-items: center; gap: 10px; border: 1px solid var(--border); font-size: 13px; font-weight: 600; color: var(--navy); }
+.dept-item-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue-mid); flex-shrink: 0; }
+@media(max-width:900px){ .about-grid{grid-template-columns:1fr} .stats-row{grid-template-columns:1fr 1fr} .dept-list{grid-template-columns:1fr 1fr} .pillar-grid{grid-template-columns:1fr} .founder-card{flex-direction:column;text-align:center} }
+@media(max-width:600px){ .stats-row{grid-template-columns:1fr 1fr} .dept-list{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / About</div>
+    <h1>About Science Spark</h1>
+    <p>Learn about who we are, what we stand for, and the people who make it happen.</p>
+  </div>
+</div>
+<div class="page-content">
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-box"><div class="stat-num">2026</div><div class="stat-lbl">Year Founded</div></div>
+    <div class="stat-box"><div class="stat-num">16</div><div class="stat-lbl">Departments</div></div>
+    <div class="stat-box"><div class="stat-num">29</div><div class="stat-lbl">Team Members</div></div>
+    <div class="stat-box"><div class="stat-num">1200+</div><div class="stat-lbl">Participants Reached</div></div>
+  </div>
+
+  <!-- About -->
+  <div class="about-grid">
+    <div>
+      <div class="section-label">Who We Are</div>
+      <div class="section-title">Our Story</div>
+      <p class="section-desc" style="margin-bottom:16px">Science Spark is a youth organization dedicated to spreading science, creativity, and innovation among students. The organization inspires young minds through science projects, quizzes, olympiads, workshops, and educational events.</p>
+      <p class="section-desc" style="margin-bottom:16px">It creates opportunities for students to explore knowledge, develop skills, and build confidence in science and leadership. Science Spark aims to build a generation of curious, talented, and socially responsible future leaders.</p>
+      <p class="section-desc">We operate in three key ways: we organize our own competitions, we become members of other clubs and help them grow, and we assist organizations in gathering participants for their events.</p>
+    </div>
+    <div>
+      <div class="about-photo">🔬<div class="about-photo-caption">Science Spark Team — 2026</div></div>
+    </div>
+  </div>
+
+  <!-- Mission Pillars -->
+  <div class="section-label">What Drives Us</div>
+  <div class="section-title">Our Pillars</div>
+  <div class="pillar-grid">
+    <div class="pillar-card"><div class="pillar-icon">🏆</div><div class="pillar-title">Competitions</div><div class="pillar-desc">Organizing and participating in science olympiads and competitions, helping young minds test their knowledge on national stages.</div></div>
+    <div class="pillar-card"><div class="pillar-icon">🤝</div><div class="pillar-title">Partnerships</div><div class="pillar-desc">Joining other clubs as members and helping them gather participants, amplifying the reach of science events across Bangladesh.</div></div>
+    <div class="pillar-card"><div class="pillar-icon">💡</div><div class="pillar-title">Innovation</div><div class="pillar-desc">Fostering creative thinking through hands-on science projects, research & development activities, and workshops.</div></div>
+    <div class="pillar-card"><div class="pillar-icon">🌱</div><div class="pillar-title">Leadership</div><div class="pillar-desc">Building confidence, teamwork, and social responsibility among youth through structured programs and events.</div></div>
+    <div class="pillar-card"><div class="pillar-icon">📸</div><div class="pillar-title">Creative Arts</div><div class="pillar-desc">Celebrating science through photography, arts, and culture — showing that science and creativity go hand in hand.</div></div>
+    <div class="pillar-card"><div class="pillar-icon">📢</div><div class="pillar-title">Community</div><div class="pillar-desc">Creating a vibrant, inclusive community where every student — regardless of background — can explore and excel in science.</div></div>
+  </div>
+
+  <!-- Founder -->
+  <div class="founder-card">
+    <div class="founder-avatar" style="background:none;padding:0;overflow:hidden;border:3px solid rgba(255,255,255,.3)">
+      <img src="../images/Ahnaf_Tahsin_General_Secretary.jpeg" alt="Ahnaf Tahsin" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:50%">
+    </div>
+    <div>
+      <div class="founder-label">Founder & CEO</div>
+      <div class="founder-name">Ahnaf Tahsin</div>
+      <div class="founder-contact">Also serving as General Secretary · <a href="mailto:ahnaftahsin.official@gmail.com">ahnaftahsin.official@gmail.com</a></div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Departments -->
+  <div class="section-label">How We're Organized</div>
+  <div class="section-title">Our 16 Departments</div>
+  <p class="section-desc">Science Spark operates through specialized departments, each led by dedicated presidents and vice presidents.</p>
+  <div class="dept-list">
+    <div class="dept-item"><span class="dept-item-dot"></span>Management</div>
+    <div class="dept-item"><span class="dept-item-dot"></span>Administration</div>
+    <div class="dept-item"><span class="dept-item-dot"></span>Publication</div>
+    <div class="dept-item"><span class="dept-item-dot"></span>LWS</div>
+    <div class="dept-item"><span class="dept-item-dot"></span>Quiz</div>
+    <div class="dept-item"><span class="dept-item-dot"></span>Photography</div>
+    <div class="dept-item"><span class="dept-item-dot"></span>Research & Development</div>
+    <div class="dept-item"><span class="dept-item-dot"></span>Project</div>
+    <div class="dept-item"><span class="dept-item-dot"></span>Concept & Planning</div>
+    <div class="dept-item"><span class="dept-item-dot"></span>Arts & Culture</div>
+    <div class="dept-item"><span class="dept-item-dot"></span>IT Department</div>
+    <div class="dept-item"><span class="dept-item-dot"></span>Public Relations</div>
+  </div>
+
+  <div style="margin-top:48px;text-align:center">
+    <a href="team.html" class="btn btn-primary">Meet the Full Team →</a>
+    <a href="join.html" class="btn btn-outline" style="margin-left:12px">Join Science Spark</a>
+  </div>
+</div>
+<div id="main-footer"></div>
+<script src="../js/main.js"></script>
+</body>
+</html>

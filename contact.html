@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Competitions — Science Spark</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.filter-bar { display: flex; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
+.filter-btn { padding: 8px 20px; border-radius: 8px; border: 1.5px solid var(--border); background: #fff; color: var(--grey); font-size: 13px; font-weight: 600; font-family: inherit; cursor: pointer; transition: all .2s; }
+.filter-btn:hover { border-color: var(--blue-mid); color: var(--blue-mid); }
+.filter-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+.comp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px,1fr)); gap: 24px; }
+.comp-card { background: #fff; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 2px 12px rgba(13,42,78,.06); transition: all .3s; }
+.comp-card:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(13,42,78,.13); }
+.comp-header { background: linear-gradient(135deg, var(--navy) 0%, var(--blue-mid) 100%); padding: 30px 26px; position: relative; overflow: hidden; }
+.comp-header::after { content: ''; position: absolute; right: -30px; top: -30px; width: 120px; height: 120px; border-radius: 50%; background: rgba(255,255,255,.05); }
+.comp-status { display: inline-block; padding: 4px 13px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; margin-bottom: 12px; }
+.status-past { background: rgba(255,255,255,.15); color: rgba(255,255,255,.85); }
+.status-upcoming { background: #F5A623; color: #080F1E; }
+.comp-title { font-family: 'Bebas Neue', sans-serif; font-size: 30px; color: #fff; letter-spacing: 1px; line-height: 1.1; }
+.comp-body { padding: 26px; }
+.meta-row { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 16px; }
+.meta-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--grey); }
+.comp-desc { font-size: 14px; color: var(--grey); line-height: 1.75; margin-bottom: 20px; }
+.result-box { background: var(--cream); border-radius: 10px; padding: 14px 18px; margin-bottom: 20px; }
+.result-box-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--grey); margin-bottom: 8px; }
+.result-row { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 4px; }
+.result-row strong { color: var(--blue-mid); }
+.comp-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.how-section { background: var(--light); border-radius: 16px; padding: 36px; margin-top: 56px; }
+.how-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 24px; }
+.how-item { text-align: center; padding: 20px; }
+.how-num { width: 44px; height: 44px; border-radius: 50%; background: var(--navy); color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 22px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
+.how-title { font-weight: 700; font-size: 14px; color: var(--navy); margin-bottom: 8px; }
+.how-desc { font-size: 13px; color: var(--grey); line-height: 1.65; }
+@media(max-width:700px){ .comp-grid{grid-template-columns:1fr} .how-grid{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / Competitions</div>
+    <h1>Competitions</h1>
+    <p>We organize our own competitions, join others as a team, and help clubs find participants across Bangladesh.</p>
+  </div>
+</div>
+<div class="page-content">
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filter('all',this)">All</button>
+    <button class="filter-btn" onclick="filter('past',this)">Past Events</button>
+    <button class="filter-btn" onclick="filter('upcoming',this)">Upcoming</button>
+  </div>
+  <div class="comp-grid" id="compGrid">
+    <!-- Past 1 -->
+    <div class="comp-card" data-type="past">
+      <div class="comp-header">
+        <span class="comp-status status-past">Past Event</span>
+        <div class="comp-title">SciVerse Carnival 1.0</div>
+      </div>
+      <div class="comp-body">
+        <div class="meta-row">
+          <span class="meta-item">📅 2026</span>
+          <span class="meta-item">📍 Bangladesh</span>
+          <span class="meta-item">👥 700+ Participants</span>
+        </div>
+        <p class="comp-desc">A grand science carnival bringing together young innovators and science enthusiasts from across Bangladesh for a spectacular day of knowledge, creativity, and competition. SciVerse Carnival 1.0 was Science Spark's flagship event — and it exceeded all expectations.</p>
+        <div class="result-box">
+          <div class="result-box-title">Results & Highlights</div>
+          <div class="result-row"><span>Total Participants</span><strong>700+</strong></div>
+          <div class="result-row"><span>Campus Ambassadors</span><strong>52 CAs</strong></div>
+          <div class="result-row"><span>Status</span><strong>✅ Completed</strong></div>
+        </div>
+        <div class="comp-actions">
+          <a href="gallery.html" class="btn btn-outline btn-sm">View Gallery →</a>
+        </div>
+      </div>
+    </div>
+    <!-- Past 2 -->
+    <div class="comp-card" data-type="past">
+      <div class="comp-header">
+        <span class="comp-status status-past">Past Event</span>
+        <div class="comp-title">1st National Freedom Fiesta</div>
+      </div>
+      <div class="comp-body">
+        <div class="meta-row">
+          <span class="meta-item">📅 2026</span>
+          <span class="meta-item">📍 Bangladesh</span>
+          <span class="meta-item">👥 500+ Participants</span>
+        </div>
+        <p class="comp-desc">Bangladesh's first National Freedom Fiesta — a patriotic science and creativity event celebrating independence through innovation, knowledge quizzes, and outstanding student projects. A landmark moment for youth science in Bangladesh.</p>
+        <div class="result-box">
+          <div class="result-box-title">Results & Highlights</div>
+          <div class="result-row"><span>Total Participants</span><strong>500+</strong></div>
+          <div class="result-row"><span>Campus Ambassadors</span><strong>66 CAs</strong></div>
+          <div class="result-row"><span>Status</span><strong>✅ Completed</strong></div>
+        </div>
+        <div class="comp-actions">
+          <a href="gallery.html" class="btn btn-outline btn-sm">View Gallery →</a>
+        </div>
+      </div>
+    </div>
+    <!-- Upcoming -->
+    <div class="comp-card" data-type="upcoming">
+      <div class="comp-header">
+        <span class="comp-status status-upcoming">Upcoming</span>
+        <div class="comp-title">SciVerse Carnival 2.0</div>
+      </div>
+      <div class="comp-body">
+        <div class="meta-row">
+          <span class="meta-item">📅 Coming Soon · 2026</span>
+          <span class="meta-item">📍 Bangladesh</span>
+        </div>
+        <p class="comp-desc">The highly anticipated sequel to our flagship science carnival — bigger, bolder, and more exciting than ever. SciVerse Carnival 2.0 promises to be an unmissable event for every science enthusiast in Bangladesh. Registration details coming soon.</p>
+        <div class="result-box">
+          <div class="result-box-title">Event Info</div>
+          <div class="result-row"><span>Status</span><strong>🔜 Coming Soon</strong></div>
+          <div class="result-row"><span>Registration</span><strong>Opening Soon</strong></div>
+        </div>
+        <div class="comp-actions">
+          <a href="contact.html" class="btn btn-primary btn-sm">Register Interest →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div class="how-section">
+    <div class="section-label">How We Work</div>
+    <div class="section-title">Our Competition Model</div>
+    <div class="how-grid">
+      <div class="how-item"><div class="how-num">1</div><div class="how-title">We Organize</div><div class="how-desc">Science Spark plans and runs its own competitions — handling everything from concept to execution.</div></div>
+      <div class="how-item"><div class="how-num">2</div><div class="how-title">We Join</div><div class="how-desc">We become members of other clubs' competitions, representing Science Spark on national stages.</div></div>
+      <div class="how-item"><div class="how-num">3</div><div class="how-title">We Support</div><div class="how-desc">We help partner clubs gather participants, spread the word, and make their events a success.</div></div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:48px">
+    <p class="section-desc" style="margin-bottom:20px">Want to collaborate on a competition or need help organizing your event?</p>
+    <a href="partners.html" class="btn btn-primary">Partner with Us →</a>
+    <a href="contact.html" class="btn btn-outline" style="margin-left:12px">Contact Us</a>
+  </div>
+</div>
+<div id="main-footer"></div>
+<script src="../js/main.js"></script>
+<script>
+function filter(type, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.comp-card').forEach(c=>{
+    c.style.display = (type==='all' || c.dataset.type===type) ? 'block' : 'none';
+  });
+}
+</script>
+</body>
+</html>

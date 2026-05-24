@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Join Us — Science Spark</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.join-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+.why-list{list-style:none;margin:20px 0 32px}
+.why-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
+.why-icon{width:40px;height:40px;border-radius:10px;background:var(--light);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.why-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:3px}
+.why-desc{font-size:13px;color:var(--grey);line-height:1.6}
+.process-steps{display:grid;gap:0;margin-top:32px}
+.step{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border)}
+.step:last-child{border-bottom:none}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-title{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:3px}
+.step-desc{font-size:13px;color:var(--grey);line-height:1.6}
+.form-card{background:#fff;border-radius:16px;border:1px solid var(--border);padding:40px;box-shadow:0 4px 24px rgba(13,42,78,.08)}
+.form-card h2{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--navy);letter-spacing:1.5px;margin-bottom:4px}
+.free-badge{display:inline-flex;align-items:center;gap:6px;background:#e6f9f0;color:#1a6640;border-radius:100px;padding:4px 14px;font-size:12px;font-weight:700;margin-bottom:20px}
+.dept-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.dept-option{display:flex;align-items:center;gap:8px;background:var(--cream);border-radius:8px;padding:10px 14px;cursor:pointer;border:1.5px solid transparent;transition:all .2s}
+.dept-option:hover{border-color:var(--blue-mid);background:var(--light)}
+.dept-option input{accent-color:var(--blue-mid)}
+.dept-option label{font-size:13px;font-weight:500;color:var(--navy);cursor:pointer}
+@media(max-width:900px){.join-layout{grid-template-columns:1fr}.dept-options{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / Join Us</div>
+    <h1>Join Science Spark</h1>
+    <p>Become part of Bangladesh's most exciting youth science organization — completely free, open to everyone.</p>
+  </div>
+</div>
+<div class="page-content">
+  <div class="join-layout">
+    <div>
+      <div class="section-label">Why Join?</div>
+      <div class="section-title">Be Part of Something Bigger</div>
+      <ul class="why-list">
+        <li class="why-item"><div class="why-icon">🏆</div><div><div class="why-title">Competitions & Events</div><div class="why-desc">Participate in national science competitions, olympiads, and festivals organized by Science Spark.</div></div></li>
+        <li class="why-item"><div class="why-icon">🤝</div><div><div class="why-title">Networking</div><div class="why-desc">Connect with 1200+ science enthusiasts, students, and leaders across Bangladesh.</div></div></li>
+        <li class="why-item"><div class="why-icon">💡</div><div><div class="why-title">Skill Development</div><div class="why-desc">Develop leadership, research, creativity, and communication skills through real-world projects.</div></div></li>
+        <li class="why-item"><div class="why-icon">📜</div><div><div class="why-title">Recognition</div><div class="why-desc">Earn certificates, recognition, and CA (Campus Ambassador) status for your contributions.</div></div></li>
+        <li class="why-item"><div class="why-icon">🌱</div><div><div class="why-title">Free Membership</div><div class="why-desc">Joining Science Spark is completely free. Just apply and go through our simple approval process.</div></div></li>
+      </ul>
+      <div class="section-label">How It Works</div>
+      <div class="section-title" style="font-size:26px;margin-bottom:16px">Application Process</div>
+      <div class="process-steps">
+        <div class="step"><div class="step-num">1</div><div><div class="step-title">Fill the Application</div><div class="step-desc">Complete the form with your details and preferred department.</div></div></div>
+        <div class="step"><div class="step-num">2</div><div><div class="step-title">Review Period</div><div class="step-desc">Our team reviews your application within 3–5 business days.</div></div></div>
+        <div class="step"><div class="step-num">3</div><div><div class="step-title">Approval & Welcome</div><div class="step-desc">Approved members receive a welcome message and onboarding details.</div></div></div>
+        <div class="step"><div class="step-num">4</div><div><div class="step-title">Start Contributing</div><div class="step-desc">Join your department, attend events, and start making an impact!</div></div></div>
+      </div>
+    </div>
+    <div class="form-card">
+      <h2>Apply Now</h2>
+      <span class="free-badge">✓ Completely Free</span>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">First Name *</label><input type="text" class="form-control" placeholder="First name"></div>
+        <div class="form-group"><label class="form-label">Last Name *</label><input type="text" class="form-control" placeholder="Last name"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Email Address *</label><input type="email" class="form-control" placeholder="your@email.com"></div>
+      <div class="form-group"><label class="form-label">Phone Number *</label><input type="tel" class="form-control" placeholder="+880 ..."></div>
+      <div class="form-group"><label class="form-label">Facebook Profile URL</label><input type="url" class="form-control" placeholder="https://facebook.com/..."></div>
+      <div class="form-group"><label class="form-label">Instagram Handle</label><input type="text" class="form-control" placeholder="@yourhandle"></div>
+      <div class="form-group">
+        <label class="form-label">Educational Institution *</label>
+        <input type="text" class="form-control" placeholder="Your school, college or university">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Preferred Department(s) *</label>
+        <div class="dept-options">
+          <div class="dept-option"><input type="checkbox" id="d1"><label for="d1">Management</label></div>
+          <div class="dept-option"><input type="checkbox" id="d2"><label for="d2">Administration</label></div>
+          <div class="dept-option"><input type="checkbox" id="d3"><label for="d3">Publication</label></div>
+          <div class="dept-option"><input type="checkbox" id="d4"><label for="d4">LWS</label></div>
+          <div class="dept-option"><input type="checkbox" id="d5"><label for="d5">Organizing Secretary</label></div>
+          <div class="dept-option"><input type="checkbox" id="d6"><label for="d6">Photography</label></div>
+          <div class="dept-option"><input type="checkbox" id="d7"><label for="d7">Research & Dev</label></div>
+          <div class="dept-option"><input type="checkbox" id="d8"><label for="d8">Project</label></div>
+          <div class="dept-option"><input type="checkbox" id="d9"><label for="d9">Concept & Planning</label></div>
+          <div class="dept-option"><input type="checkbox" id="d10"><label for="d10">Arts & Culture</label></div>
+          <div class="dept-option"><input type="checkbox" id="d11"><label for="d11">IT Department</label></div>
+          <div class="dept-option"><input type="checkbox" id="d12"><label for="d12">Public Relations</label></div>
+        </div>
+      </div>
+      <div class="form-group"><label class="form-label">Why do you want to join Science Spark? *</label><textarea class="form-control" placeholder="Tell us about your passion for science, your skills, and what you hope to contribute to Science Spark..."></textarea></div>
+      <div class="form-group"><label class="form-label">Any relevant experience or skills?</label><textarea class="form-control" style="min-height:80px" placeholder="Previous clubs, competitions, skills, projects..."></textarea></div>
+      <button class="btn btn-primary btn-full" onclick="alert('Application submitted! We will review it and get back to you within 3–5 business days.')">Submit Application →</button>
+      <p style="font-size:12px;color:var(--grey);text-align:center;margin-top:14px">Questions? Email us at <a href="mailto:sciencespark.official.bd@gmail.com" style="color:var(--blue-mid)">sciencespark.official.bd@gmail.com</a></p>
+    </div>
+  </div>
+</div>
+<div id="main-footer"></div>
+<script src="../js/main.js"></script>
+</body>
+</html>

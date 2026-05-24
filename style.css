@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science Spark — Ignite Youth Minds</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* HOME-SPECIFIC */
+.hero {
+  background: var(--dark);
+  min-height: calc(100vh - 66px);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 60%, rgba(26,74,138,.45) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(74,144,217,.18) 0%, transparent 50%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(74,144,217,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(74,144,217,.05) 1px,transparent 1px);
+  background-size: 56px 56px;
+}
+.hero-inner {
+  position: relative; z-index: 2;
+  max-width: 1260px; margin: 0 auto; width: 100%; padding: 80px 32px;
+  display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(74,144,217,.14); border: 1px solid rgba(74,144,217,.3);
+  border-radius: 100px; padding: 6px 16px;
+  font-size: 12px; color: var(--sky); font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 26px;
+}
+.hero-dot { width: 6px; height: 6px; background: var(--sky); border-radius: 50%; animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+.hero-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(56px,7.5vw,100px); color: #fff; letter-spacing: 2px; line-height: .92; margin-bottom: 10px; }
+.hero-title span { color: var(--sky); }
+.hero-sub { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(17px,2.2vw,24px); color: rgba(255,255,255,.45); margin-bottom: 24px; }
+.hero-desc { font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.82; max-width: 500px; margin-bottom: 38px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-stats { display: flex; gap: 36px; margin-top: 48px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,.08); flex-wrap: wrap; }
+.hero-stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 38px; color: var(--sky); letter-spacing: 2px; line-height: 1; }
+.hero-stat-lbl { font-size: 11px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
+/* Animated logo */
+.hero-visual { display: flex; align-items: center; justify-content: center; }
+.logo-orbit { position: relative; width: 340px; height: 340px; display: flex; align-items: center; justify-content: center; }
+.orbit-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(74,144,217,.18); }
+.orbit-ring::before { content: ''; position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; background: var(--sky); border-radius: 50%; transform: translateX(-50%); box-shadow: 0 0 12px var(--sky); }
+.r1 { width: 340px; height: 340px; animation: spin 22s linear infinite; }
+.r2 { width: 250px; height: 250px; animation: spin 16s linear infinite reverse; border-color: rgba(74,144,217,.12); }
+.r3 { width: 160px; height: 160px; animation: spin 10s linear infinite; border-color: rgba(74,144,217,.22); }
+@keyframes spin { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+.orbit-logo { position: relative; z-index: 2; width: 170px; height: 170px; object-fit: contain; filter: drop-shadow(0 0 32px rgba(74,144,217,.45)); }
+/* Quick nav cards */
+.quick-nav { background: #fff; border-top: 1px solid var(--border); padding: 0; }
+.quick-nav-inner { max-width: 1260px; margin: 0 auto; display: grid; grid-template-columns: repeat(5,1fr); }
+.qn-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 28px 16px; border-right: 1px solid var(--border); text-align: center; color: var(--navy); transition: all .25s; text-decoration: none; }
+.qn-item:last-child { border-right: none; }
+.qn-item:hover { background: var(--light); color: var(--blue-mid); }
+.qn-icon { font-size: 28px; line-height: 1; }
+.qn-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; }
+/* Featured sections */
+.home-section { padding: 80px 32px; }
+.home-section-inner { max-width: 1260px; margin: 0 auto; }
+.section-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 36px; flex-wrap: wrap; gap: 16px; }
+/* Competition cards */
+.comp-card { border-radius: 14px; overflow: hidden; background: #fff; border: 1px solid var(--border); box-shadow: 0 2px 12px rgba(13,42,78,.06); transition: all .3s; }
+.comp-card:hover { transform: translateY(-5px); box-shadow: 0 14px 40px rgba(13,42,78,.12); }
+.comp-card-header { background: linear-gradient(135deg, var(--navy), var(--blue-mid)); padding: 28px 24px; }
+.comp-card-header .badge { margin-bottom: 10px; background: rgba(255,255,255,.15); color: rgba(255,255,255,.9); }
+.comp-card-name { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: #fff; letter-spacing: 1px; }
+.comp-card-body { padding: 22px 24px; }
+.comp-meta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 12px; }
+.comp-meta-item { font-size: 12px; color: var(--grey); display: flex; align-items: center; gap: 5px; }
+.comp-desc { font-size: 13px; color: var(--grey); line-height: 1.7; }
+.comp-result { background: var(--cream); border-radius: 8px; padding: 10px 14px; font-size: 13px; color: var(--navy); font-weight: 600; margin-top: 14px; }
+.comp-result span { color: var(--blue-mid); }
+/* News */
+.news-card { background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); transition: all .3s; }
+.news-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(13,42,78,.12); }
+.news-thumb { aspect-ratio: 16/9; background: linear-gradient(135deg, var(--navy) 0%, var(--blue-mid) 100%); display: flex; align-items: center; justify-content: center; font-size: 44px; position: relative; }
+.news-cat-badge { position: absolute; top: 14px; left: 14px; background: var(--sky); color: #fff; padding: 3px 11px; border-radius: 100px; font-size: 11px; font-weight: 700; }
+.news-body { padding: 22px; }
+.news-date { font-size: 11px; color: var(--grey); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.news-title { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); line-height: 1.35; margin-bottom: 10px; }
+.news-excerpt { font-size: 13px; color: var(--grey); line-height: 1.7; }
+.news-read { display: inline-flex; align-items: center; gap: 5px; color: var(--blue-mid); font-size: 13px; font-weight: 700; margin-top: 14px; transition: gap .2s; }
+.news-read:hover { gap: 9px; }
+/* CTA banner */
+.cta-banner { background: linear-gradient(135deg, var(--navy), var(--blue)); padding: 72px 32px; text-align: center; position: relative; overflow: hidden; }
+.cta-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(74,144,217,.18) 0%, transparent 65%); }
+.cta-banner-inner { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+.cta-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px,5vw,60px); color: #fff; letter-spacing: 2px; line-height: 1; margin-bottom: 16px; }
+.cta-title span { color: var(--sky); }
+.cta-desc { font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.8; margin-bottom: 32px; }
+
+@media(max-width:960px){
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .quick-nav-inner { grid-template-columns: 1fr 1fr; }
+  .qn-item:nth-child(2n) { border-right: none; }
+  .qn-item { border-bottom: 1px solid var(--border); }
+}
+@media(max-width:600px){
+  .home-section { padding: 56px 20px; }
+  .quick-nav-inner { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="hero-dot"></span>Youth Science Organization · Est. 2026 · Bangladesh</div>
+      <div class="hero-title">Science<br><span>Spark</span></div>
+      <div class="hero-sub">Ignite Youth Minds</div>
+      <p class="hero-desc">A youth organization dedicated to spreading science, creativity, and innovation among students — through olympiads, competitions, workshops, and educational events.</p>
+      <div class="hero-actions">
+        <a href="pages/join.html" class="btn btn-primary">Join Science Spark →</a>
+        <a href="pages/competitions.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.3);color:#fff">Our Competitions</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="hero-stat-num">16</div><div class="hero-stat-lbl">Departments</div></div>
+        <div><div class="hero-stat-num">29</div><div class="hero-stat-lbl">Team Members</div></div>
+        <div><div class="hero-stat-num">1200+</div><div class="hero-stat-lbl">Participants</div></div>
+        <div><div class="hero-stat-num">3+</div><div class="hero-stat-lbl">Achievements</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="logo-orbit">
+        <div class="orbit-ring r1"></div>
+        <div class="orbit-ring r2"></div>
+        <div class="orbit-ring r3"></div>
+        <img src="images/logo.png" alt="Science Spark" class="orbit-logo">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK NAV -->
+<div class="quick-nav">
+  <div class="quick-nav-inner">
+    <a href="pages/competitions.html" class="qn-item"><span class="qn-icon">🏆</span><span class="qn-label">Competitions</span></a>
+    <a href="pages/events.html" class="qn-item"><span class="qn-icon">📅</span><span class="qn-label">Events</span></a>
+    <a href="pages/team.html" class="qn-item"><span class="qn-icon">👥</span><span class="qn-label">Our Team</span></a>
+    <a href="pages/partners.html" class="qn-item"><span class="qn-icon">🤝</span><span class="qn-label">Partners</span></a>
+    <a href="pages/gallery.html" class="qn-item"><span class="qn-icon">📸</span><span class="qn-label">Gallery</span></a>
+  </div>
+</div>
+
+<!-- UPCOMING COMPETITIONS PREVIEW -->
+<section class="home-section" style="background:var(--cream)">
+  <div class="home-section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-label">What We've Done</div>
+        <div class="section-title">Featured Competitions</div>
+      </div>
+      <a href="pages/competitions.html" class="btn btn-outline btn-sm">View All →</a>
+    </div>
+    <div class="grid-2">
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <span class="badge">Past Event</span>
+          <div class="comp-card-name">SciVerse Carnival 1.0</div>
+        </div>
+        <div class="comp-card-body">
+          <div class="comp-meta">
+            <span class="comp-meta-item">📅 2026</span>
+            <span class="comp-meta-item">👥 700+ Participants</span>
+            <span class="comp-meta-item">🎓 52 Campus Ambassadors</span>
+          </div>
+          <p class="comp-desc">A grand science carnival bringing together young innovators from across Bangladesh for a spectacular day of knowledge, creativity, and competition.</p>
+          <div class="comp-result">Result: <span>Massive Success · 700+ attendees</span></div>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <span class="badge">Past Event</span>
+          <div class="comp-card-name">1st National Freedom Fiesta</div>
+        </div>
+        <div class="comp-card-body">
+          <div class="comp-meta">
+            <span class="comp-meta-item">📅 2026</span>
+            <span class="comp-meta-item">👥 500+ Participants</span>
+            <span class="comp-meta-item">🎓 66 Campus Ambassadors</span>
+          </div>
+          <p class="comp-desc">Bangladesh's first National Freedom Fiesta — a patriotic science and creativity event celebrating independence through innovation and knowledge.</p>
+          <div class="comp-result">Result: <span>500+ attendees · 66 CAs nationwide</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SNIPPET -->
+<section class="home-section" style="background:#fff">
+  <div class="home-section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+      <div>
+        <div class="section-label">Who We Are</div>
+        <div class="section-title">About Science Spark</div>
+        <p class="section-desc" style="margin-bottom:16px">Science Spark is a youth organization dedicated to spreading science, creativity, and innovation among students. We inspire young minds through science projects, quizzes, olympiads, workshops, and educational events.</p>
+        <p class="section-desc" style="margin-bottom:28px">We create opportunities for students to explore knowledge, develop skills, and build confidence in science and leadership — shaping a generation of curious, talented, and socially responsible future leaders.</p>
+        <a href="pages/about.html" class="btn btn-primary">Learn More About Us →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="card" style="padding:24px;text-align:center">
+          <div style="font-size:32px;margin-bottom:10px">🔬</div>
+          <div style="font-weight:700;font-size:14px;color:var(--navy);margin-bottom:6px">Science & Research</div>
+          <div style="font-size:12px;color:var(--grey);line-height:1.6">Olympiads, quizzes, and hands-on science projects</div>
+        </div>
+        <div class="card" style="padding:24px;text-align:center">
+          <div style="font-size:32px;margin-bottom:10px">🏆</div>
+          <div style="font-weight:700;font-size:14px;color:var(--navy);margin-bottom:6px">Competitions</div>
+          <div style="font-size:12px;color:var(--grey);line-height:1.6">Organizing & joining national-level competitions</div>
+        </div>
+        <div class="card" style="padding:24px;text-align:center">
+          <div style="font-size:32px;margin-bottom:10px">🤝</div>
+          <div style="font-weight:700;font-size:14px;color:var(--navy);margin-bottom:6px">Partnerships</div>
+          <div style="font-size:12px;color:var(--grey);line-height:1.6">Helping clubs gather participants & grow</div>
+        </div>
+        <div class="card" style="padding:24px;text-align:center">
+          <div style="font-size:32px;margin-bottom:10px">📸</div>
+          <div style="font-weight:700;font-size:14px;color:var(--navy);margin-bottom:6px">Creative Arts</div>
+          <div style="font-size:12px;color:var(--grey);line-height:1.6">Photography, arts, culture & expression</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS PREVIEW -->
+<section class="home-section" style="background:var(--cream)">
+  <div class="home-section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-label">Latest Updates</div>
+        <div class="section-title">News & Announcements</div>
+      </div>
+      <a href="pages/news.html" class="btn btn-outline btn-sm">All News →</a>
+    </div>
+    <div class="grid-3">
+      <div class="news-card">
+        <div class="news-thumb">🎉<span class="news-cat-badge">Announcement</span></div>
+        <div class="news-body">
+          <div class="news-date">2026</div>
+          <div class="news-title">SciVerse Carnival 1.0 Concludes with Massive Success</div>
+          <p class="news-excerpt">Over 700 participants and 52 Campus Ambassadors made this one of Bangladesh's most exciting youth science events.</p>
+          <a href="pages/news.html" class="news-read">Read More →</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-thumb">🇧🇩<span class="news-cat-badge">Event</span></div>
+        <div class="news-body">
+          <div class="news-date">2026</div>
+          <div class="news-title">1st National Freedom Fiesta — A Resounding Success</div>
+          <p class="news-excerpt">500+ students gathered for science, creativity, and national pride with 66 Campus Ambassadors nationwide.</p>
+          <a href="pages/news.html" class="news-read">Read More →</a>
+        </div>
+      </div>
+      <div class="news-card">
+        <div class="news-thumb">🚀<span class="news-cat-badge">Update</span></div>
+        <div class="news-body">
+          <div class="news-date">2026</div>
+          <div class="news-title">Science Spark Now Operates Across 16 Departments</div>
+          <p class="news-excerpt">From Photography and IT to Research & Development — Science Spark continues to grow and expand its reach.</p>
+          <a href="pages/news.html" class="news-read">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <div class="cta-banner-inner">
+    <div class="cta-title">Ready to <span>Spark</span> Your Journey?</div>
+    <p class="cta-desc">Join Science Spark for free. Be part of a growing community of young scientists, innovators, and leaders across Bangladesh.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="pages/join.html" class="btn btn-primary">Apply to Join — It's Free</a>
+      <a href="pages/partners.html" class="btn btn-outline" style="border-color:rgba(255,255,255,.3);color:#fff">Partner with Us</a>
+    </div>
+  </div>
+</div>
+
+<div id="main-footer"></div>
+<script src="js/main.js">
+</script>
+<script>
+// Override BASE for root-level index
+const _BASE = '.';
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[href^="../"]').forEach(el => {
+    el.href = el.href.replace('../', './');
+  });
+  document.querySelectorAll('img[src^="../"]').forEach(el => {
+    el.src = el.src.replace('../', './');
+  });
+});
+</script>
+</body>
+</html>

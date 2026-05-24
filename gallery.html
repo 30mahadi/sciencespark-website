@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events — Science Spark</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.events-filter { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:32px; }
+.ev-btn { padding:8px 20px; border-radius:8px; border:1.5px solid var(--border); background:#fff; color:var(--grey); font-size:13px; font-weight:600; font-family:inherit; cursor:pointer; transition:all .2s; }
+.ev-btn:hover { border-color:var(--blue-mid); color:var(--blue-mid); }
+.ev-btn.active { background:var(--navy); color:#fff; border-color:var(--navy); }
+.events-list { display:grid; gap:20px; }
+.ev-card { background:#fff; border-radius:14px; border:1px solid var(--border); overflow:hidden; display:grid; grid-template-columns:140px 1fr; box-shadow:0 2px 12px rgba(13,42,78,.05); transition:all .3s; }
+.ev-card:hover { transform:translateY(-3px); box-shadow:0 10px 32px rgba(13,42,78,.11); }
+.ev-date-col { background:linear-gradient(180deg, var(--navy), var(--blue)); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; text-align:center; }
+.ev-date-day { font-family:'Bebas Neue',sans-serif; font-size:40px; color:#fff; letter-spacing:1px; line-height:1; }
+.ev-date-month { font-size:12px; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:1px; }
+.ev-date-year { font-size:11px; color:rgba(255,255,255,.4); margin-top:4px; }
+.ev-body { padding:22px 26px; }
+.ev-type-badge { display:inline-block; background:var(--light); color:var(--blue-mid); border-radius:100px; padding:3px 12px; font-size:11px; font-weight:700; margin-bottom:10px; }
+.ev-status-badge { display:inline-block; border-radius:100px; padding:3px 12px; font-size:11px; font-weight:700; margin-left:6px; }
+.ev-status-past { background:#f0f2f5; color:var(--grey); }
+.ev-status-upcoming { background:#fff4e0; color:#c07000; }
+.ev-title { font-family:'Playfair Display',serif; font-size:20px; color:var(--navy); margin-bottom:8px; }
+.ev-desc { font-size:13px; color:var(--grey); line-height:1.7; }
+@media(max-width:600px){ .ev-card{grid-template-columns:1fr} .ev-date-col{flex-direction:row;gap:10px;padding:14px 20px} }
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / Events</div>
+    <h1>Events & Activities</h1>
+    <p>Workshops, seminars, meetups and more — beyond competitions, Science Spark builds a thriving science community.</p>
+  </div>
+</div>
+<div class="page-content">
+  <div class="events-filter">
+    <button class="ev-btn active" onclick="filterEvt('all',this)">All Events</button>
+    <button class="ev-btn" onclick="filterEvt('past',this)">Past</button>
+    <button class="ev-btn" onclick="filterEvt('upcoming',this)">Upcoming</button>
+    <button class="ev-btn" onclick="filterEvt('workshop',this)">Workshops</button>
+    <button class="ev-btn" onclick="filterEvt('seminar',this)">Seminars</button>
+  </div>
+  <div class="events-list" id="evList">
+    <div class="ev-card" data-type="past" data-cat="workshop">
+      <div class="ev-date-col"><div class="ev-date-day">—</div><div class="ev-date-month">2026</div></div>
+      <div class="ev-body">
+        <span class="ev-type-badge">Workshop</span><span class="ev-status-badge ev-status-past">Completed</span>
+        <div class="ev-title">Science Project Development Workshop</div>
+        <p class="ev-desc">A hands-on workshop helping students design and develop winning science fair projects with guidance from experienced mentors and Science Spark team members.</p>
+      </div>
+    </div>
+    <div class="ev-card" data-type="past" data-cat="seminar">
+      <div class="ev-date-col"><div class="ev-date-day">—</div><div class="ev-date-month">2026</div></div>
+      <div class="ev-body">
+        <span class="ev-type-badge">Seminar</span><span class="ev-status-badge ev-status-past">Completed</span>
+        <div class="ev-title">Youth Leadership in Science</div>
+        <p class="ev-desc">An inspiring seminar exploring how young people can lead innovation and make meaningful contributions to science, society, and their communities.</p>
+      </div>
+    </div>
+    <div class="ev-card" data-type="upcoming" data-cat="workshop">
+      <div class="ev-date-col"><div class="ev-date-day">TBA</div><div class="ev-date-month">Coming</div><div class="ev-date-year">2026</div></div>
+      <div class="ev-body">
+        <span class="ev-type-badge">Exhibition</span><span class="ev-status-badge ev-status-upcoming">Upcoming</span>
+        <div class="ev-title">Photography & Science Exhibition</div>
+        <p class="ev-desc">An exhibition combining scientific concepts with creative photography — showcasing the breathtaking beauty of science through the lens. Open to all ages.</p>
+      </div>
+    </div>
+    <div class="ev-card" data-type="upcoming" data-cat="seminar">
+      <div class="ev-date-col"><div class="ev-date-day">TBA</div><div class="ev-date-month">Coming</div><div class="ev-date-year">2026</div></div>
+      <div class="ev-body">
+        <span class="ev-type-badge">Olympiad</span><span class="ev-status-badge ev-status-upcoming">Upcoming</span>
+        <div class="ev-title">Inter-Club Science Olympiad</div>
+        <p class="ev-desc">A collaborative olympiad with partner clubs, bringing together the brightest science minds from across Bangladesh for a friendly yet competitive showdown.</p>
+      </div>
+    </div>
+    <div class="ev-card" data-type="upcoming" data-cat="workshop">
+      <div class="ev-date-col"><div class="ev-date-day">TBA</div><div class="ev-date-month">Coming</div><div class="ev-date-year">2026</div></div>
+      <div class="ev-body">
+        <span class="ev-type-badge">Workshop</span><span class="ev-status-badge ev-status-upcoming">Upcoming</span>
+        <div class="ev-title">Innovation & Entrepreneurship Workshop</div>
+        <p class="ev-desc">Teaching students how to turn scientific ideas into real-world solutions — covering ideation, prototyping, and presenting to an audience.</p>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:48px;text-align:center">
+    <p class="section-desc" style="margin-bottom:20px">Don't miss any upcoming event — follow us on social media for announcements.</p>
+    <a href="https://www.facebook.com/share/1Eseyi6Dt4/" target="_blank" class="btn btn-primary">Follow on Facebook →</a>
+    <a href="contact.html" class="btn btn-outline" style="margin-left:12px">Get Notified</a>
+  </div>
+</div>
+<div id="main-footer"></div>
+<script src="../js/main.js"></script>
+<script>
+function filterEvt(type, btn){
+  document.querySelectorAll('.ev-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.ev-card').forEach(c=>{
+    const matchType = type==='all' || c.dataset.type===type || c.dataset.cat===type;
+    c.style.display = matchType ? 'grid' : 'none';
+  });
+}
+</script>
+</body>
+</html>

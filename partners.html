@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>News — Science Spark</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.news-card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--border);transition:all .3s}
+.news-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(13,42,78,.11)}
+.news-thumb{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:52px;position:relative;background:linear-gradient(135deg,var(--navy),var(--blue-mid))}
+.news-cat{position:absolute;top:14px;left:14px;background:var(--sky);color:#fff;padding:3px 12px;border-radius:100px;font-size:11px;font-weight:700}
+.news-body{padding:24px}
+.news-date{font-size:11px;color:var(--grey);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.news-title{font-family:'Playfair Display',serif;font-size:19px;color:var(--navy);margin-bottom:10px;line-height:1.35}
+.news-excerpt{font-size:13px;color:var(--grey);line-height:1.75}
+.news-read{display:inline-flex;align-items:center;gap:6px;color:var(--blue-mid);font-size:13px;font-weight:700;margin-top:14px;transition:gap .2s}
+.news-read:hover{gap:10px}
+.news-full{background:#fff;border-radius:14px;padding:40px;border:1px solid var(--border);margin-top:32px}
+.news-full h2{font-family:'Playfair Display',serif;font-size:28px;color:var(--navy);margin-bottom:16px;line-height:1.3}
+.news-full p{font-size:15px;color:var(--grey);line-height:1.85;margin-bottom:16px}
+</style>
+</head>
+<body>
+<div id="main-nav"></div>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / News</div>
+    <h1>News & Updates</h1>
+    <p>The latest announcements, event recaps, and updates from Science Spark.</p>
+  </div>
+</div>
+<div class="page-content">
+  <div class="news-grid">
+    <div class="news-card">
+      <div class="news-thumb">🎉<span class="news-cat">Announcement</span></div>
+      <div class="news-body">
+        <div class="news-date">2026</div>
+        <div class="news-title">SciVerse Carnival 1.0 Concludes with Massive Success</div>
+        <p class="news-excerpt">Our flagship event drew over 700 participants and 52 Campus Ambassadors, establishing Science Spark as a leading youth science organization in Bangladesh.</p>
+        <span class="news-read">Read More →</span>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-thumb">🇧🇩<span class="news-cat">Event Recap</span></div>
+      <div class="news-body">
+        <div class="news-date">2026</div>
+        <div class="news-title">1st National Freedom Fiesta — A Historic Success</div>
+        <p class="news-excerpt">500+ students gathered for science, creativity, and national pride. With 66 Campus Ambassadors across Bangladesh, the Freedom Fiesta was truly national in scope.</p>
+        <span class="news-read">Read More →</span>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-thumb">🚀<span class="news-cat">Organization</span></div>
+      <div class="news-body">
+        <div class="news-date">2026</div>
+        <div class="news-title">Science Spark Expands to 16 Specialized Departments</div>
+        <p class="news-excerpt">From Photography and IT to Research & Development and Arts & Culture — Science Spark now operates across 16 dedicated departments with 29 team members.</p>
+        <span class="news-read">Read More →</span>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-thumb">⚡<span class="news-cat">Coming Soon</span></div>
+      <div class="news-body">
+        <div class="news-date">2026</div>
+        <div class="news-title">SciVerse Carnival 2.0 — Bigger and Bolder</div>
+        <p class="news-excerpt">Following the incredible success of Carnival 1.0, Science Spark is proud to announce that SciVerse Carnival 2.0 is in the works. Stay tuned for details.</p>
+        <span class="news-read">Read More →</span>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-thumb">🤝<span class="news-cat">Partnerships</span></div>
+      <div class="news-body">
+        <div class="news-date">2026</div>
+        <div class="news-title">Science Spark Opens Partnership Applications</div>
+        <p class="news-excerpt">Clubs and organizations across Bangladesh can now apply to partner with Science Spark for competitions, events, and participant recruitment support.</p>
+        <span class="news-read">Read More →</span>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="news-thumb">🌟<span class="news-cat">Community</span></div>
+      <div class="news-body">
+        <div class="news-date">2026</div>
+        <div class="news-title">Science Spark Membership Applications Now Open</div>
+        <p class="news-excerpt">We are now accepting free membership applications for passionate students who want to be part of Bangladesh's most exciting youth science organization.</p>
+        <a href="join.html" class="news-read">Apply Now →</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="main-footer"></div>
+<script src="../js/main.js"></script>
+</body>
+</html>
